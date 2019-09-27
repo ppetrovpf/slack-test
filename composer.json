@@ -1,0 +1,11 @@
+{
+    "require": {
+        "php-http/curl-client": "^1.7",
+        "guzzlehttp/psr7": "^1.6",
+        "jolicode/slack-php-api": "^2.0",
+        "symfony/yaml": "^4.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    }
+}
