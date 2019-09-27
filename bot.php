@@ -22,8 +22,11 @@ $client = JoliCode\Slack\ClientFactory::create($config['token']);
 
 
 
-// кейс 1 - общение через бота,
-$user = $client->usersInfo(['user' => $config['user_id']])->getUser();
+//$user = $client->usersInfo(['user' => $config['user_id']])->getUser();
+//dump($user);
 
-
-dump($user);
+$client->chatPostMessage([
+    'as_user' => true,
+    'channel' => $config['user_id'],
+    'text' => 'test123',
+]);
