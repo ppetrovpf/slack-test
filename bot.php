@@ -1,5 +1,6 @@
 <?php
 
+use JoliCode\Slack\Api\Client;
 use Symfony\Component\Yaml\Yaml;
 
 function includeIfExists($file)
@@ -57,4 +58,22 @@ $resp = $client->groupsCreate(
     ]
 );
 
-dump($resp);
+// Архивировать канал
+$client->channelsArchive(
+    [
+        'channel' => $config['channel_id']
+    ],
+    [],
+    Client::FETCH_RESPONSE
+);
+
+// Разархивировать канал
+$resp = $client->channelsUnarchive(
+    [
+        'channel' => $config['channel_id']
+    ],
+    [],
+    Client::FETCH_RESPONSE
+);
+
+dump(json_decode($resp->getBody()));

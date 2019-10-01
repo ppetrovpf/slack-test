@@ -1,4 +1,5 @@
 
-token: ~
-user_email: ~
-user_id: ~
+token: ~          # token for the api client
+user_email: ~     # user email for test actions
+user_id: ~        # user ID for test actions
+channel_id: ~     # channel ID for test actions
